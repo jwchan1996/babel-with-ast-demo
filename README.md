@@ -26,7 +26,7 @@ let ast = parser.parse(sourceCode)
 traverse(ast, {
   // 进来之后我们需要找到想要的节点
   Identifier(path) {
-    path.node.name = 'hello'
+    if (path.node.name == 'getUser') path.node.name = 'sum'
   },
    FunctionDeclaration(path) {
     path.node.params = [t.identifier('a'), t.identifier('b')]
@@ -34,7 +34,7 @@ traverse(ast, {
   BlockStatement(path) {
     // 处理 OK之后的内容写到语法树上
     path.node.body = [
-      t.returnStatement(t.binaryExpression('+', t.identifier('a'), t.identifier('b')))
+      path.node.body = [t.returnStatement(t.binaryExpression('+', t.identifier('a'), t.identifier('b')))]
     ]
   }
 })
