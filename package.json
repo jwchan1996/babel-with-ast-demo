@@ -1,0 +1,14 @@
+{
+  "name": "babel-with-ast",
+  "version": "1.0.0",
+  "description": "babel with ast",
+  "main": "index.js",
+  "author": "jwchan1996",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/generator": "^7.13.9",
+    "@babel/parser": "^7.13.13",
+    "@babel/traverse": "^7.13.13",
+    "@babel/types": "^7.13.13"
+  }
+}
